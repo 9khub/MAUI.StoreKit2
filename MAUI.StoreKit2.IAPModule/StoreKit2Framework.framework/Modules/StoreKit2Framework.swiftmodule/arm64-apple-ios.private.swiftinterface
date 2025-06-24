@@ -1,0 +1,51 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.6 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name StoreKit2Framework
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Foundation
+import StoreKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 15.0, *)
+@objc public protocol PaymentManagerDelegate {
+  @objc optional func paymentManagerDidFinishPurchase(_ productId: Swift.String, transaction: StoreKit2Framework.PaymentTransaction)
+  @objc optional func paymentManagerDidFailPurchase(_ productId: Swift.String, error: Swift.String)
+  @objc optional func paymentManagerDidUpdateProducts(_ products: [StoreKit2Framework.PaymentProduct])
+  @objc optional func paymentManagerDidRestorePurchases(_ transactions: [StoreKit2Framework.PaymentTransaction])
+}
+@available(iOS 15.0, *)
+@objc public class PaymentProduct : ObjectiveC.NSObject {
+  @objc final public let productId: Swift.String
+  @objc final public let displayName: Swift.String
+  @objc final public let productDescription: Swift.String
+  @objc final public let price: Foundation.NSDecimalNumber
+  @objc final public let displayPrice: Swift.String
+  @objc final public let productType: Swift.String
+  public init(product: StoreKit.Product)
+  @objc deinit
+}
+@available(iOS 15.0, *)
+@objc public class PaymentTransaction : ObjectiveC.NSObject {
+  @objc final public let transactionId: Swift.String
+  @objc final public let productId: Swift.String
+  @objc final public let purchaseDate: Foundation.Date
+  @objc final public let isUpgraded: Swift.Bool
+  @objc final public let revocationDate: Foundation.Date?
+  @objc final public let revocationReason: Swift.String?
+  public init(transaction: StoreKit.Transaction)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 15.0, *)
+@objc public class PaymentManager : ObjectiveC.NSObject {
+  @objc public static let shared: StoreKit2Framework.PaymentManager
+  @objc weak public var delegate: (any StoreKit2Framework.PaymentManagerDelegate)?
+  @objc deinit
+  @objc public func requestProducts(productIds: [Swift.String], completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  @objc public func purchaseProduct(productId: Swift.String, appAccountToken: Foundation.UUID? = nil, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  @objc public func restorePurchases(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  @objc public func getProduct(productId: Swift.String) -> StoreKit2Framework.PaymentProduct?
+  @objc public func getAllProducts() -> [StoreKit2Framework.PaymentProduct]
+  @objc public func checkPurchaseStatus(productId: Swift.String, completion: @escaping (Swift.Bool, StoreKit2Framework.PaymentTransaction?) -> Swift.Void)
+}

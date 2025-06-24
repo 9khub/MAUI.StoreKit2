@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-ios</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+
+    <!--
+      Enable trim analyzers for class libraries.
+      To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+    -->
+    <IsTrimmable>true</IsTrimmable>
+
+    <!-- NuGet Package Information -->
+    <PackageId>MAUI.StoreKit2.IAPModule</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Yuting Li</Authors>
+    <Company>Shanghai Jiuqianji Technology Co., Ltd.</Company>
+    <Product>MAUI StoreKit2 IAP Module</Product>
+    <Description>A .NET MAUI binding library for iOS StoreKit2 In-App Purchase functionality</Description>
+    <PackageTags>MAUI;iOS;StoreKit2;IAP;InAppPurchase</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/9khub/MAUI.StoreKit2.IAPModule</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/9khub/MAUI.StoreKit2.IAPModule</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright (c) 2025 Shanghai Jiuqianji Technology Co., Ltd.</Copyright>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <NativeReference Include="StoreKit2Framework.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+      <Frameworks>StoreKit</Frameworks>
+      <LinkerFlags></LinkerFlags>
+    </NativeReference>
+  </ItemGroup>
+</Project>
