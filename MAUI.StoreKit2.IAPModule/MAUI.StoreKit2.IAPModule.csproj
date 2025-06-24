@@ -12,7 +12,7 @@
     <IsTrimmable>true</IsTrimmable>
 
     <!-- NuGet Package Information -->
-    <PackageId>MAUI.StoreKit2.IAPModule</PackageId>
+    <PackageId>StoreKit2.IAPModule</PackageId>
     <Version>1.0.0</Version>
     <Authors>Yuting Li</Authors>
     <Company>Shanghai Jiuqianji Technology Co., Ltd.</Company>
