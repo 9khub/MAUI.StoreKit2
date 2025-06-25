@@ -13,6 +13,8 @@
 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
+    <NoWarn>$(NoWarn);CS1573;CS1591</NoWarn>
+
     <!-- NuGet Package Information -->
     <PackageId>StoreKit2</PackageId>
     <Version>1.0.0</Version>
