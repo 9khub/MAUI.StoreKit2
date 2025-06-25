@@ -23,18 +23,39 @@ This library enables .NET MAUI applications to leverage Apple's modern StoreKit2
 - **.NET 8.0** or later
 - **MAUI Project** targeting iOS
 
+## Prerequisites
+
+### App Store Connect Setup
+1. Create your app in App Store Connect
+2. Configure In-App Purchase products with the same product IDs used in your code
+3. Create sandbox test users for testing
+
+### iOS Project Requirements  
+1. iOS 15.0+ deployment target
+2. Valid Bundle ID matching App Store Connect
+3. StoreKit capability enabled in your iOS project
+
 ## Installation
 
 ### NuGet Package
 
 ```bash
-dotnet add package StoreKit2.IAPModule
+dotnet add package StoreKit2
+```
+
+Or add to your `.csproj` file:
+
+```xml
+<PackageReference Include="StoreKit2" Version="1.0.0" />
 ```
 
 ### Manual Installation
 
 1. Clone this repository
-2. Add the project reference to your MAUI project
+2. Add the project reference to your MAUI project:
+   ```xml
+   <ProjectReference Include="path/to/MAUI.StoreKit2/MAUI.StoreKit2.csproj" />
+   ```
 3. Build and run
 
 ## Quick Start
@@ -167,7 +188,7 @@ The main class for handling in-app purchases.
 - `PurchaseProductWithProductId()`: Initiate a purchase for a specific product
 - `RestorePurchasesWithCompletion()`: Restore previous purchases
 - `GetProductWithProductId()`: Get product information by ID
-- `GetAllProducts`: Get all loaded products
+- `AllProducts`: Get all loaded products
 - `CheckPurchaseStatusWithProductId()`: Check if user owns a specific product
 
 ### PaymentProduct
