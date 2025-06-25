@@ -42,7 +42,7 @@ dotnet add package StoreKit2.IAPModule
 ### 1. Initialize the Payment Manager
 
 ```csharp
-using MAUI.StoreKit2.IAPModule;
+using StoreKit2;
 
 // Get the shared instance
 var paymentManager = PaymentManager.Shared;
@@ -234,7 +234,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/9khub/MAUI.StoreKit2.IAPModule/issues) page
+1. Check the [Issues](https://github.com/9khub/MAUI.StoreKit2/issues) page
 2. Create a new issue with detailed information
 3. Provide sample code and error messages when applicable
 

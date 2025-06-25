@@ -11,8 +11,10 @@
     -->
     <IsTrimmable>true</IsTrimmable>
 
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
     <!-- NuGet Package Information -->
-    <PackageId>StoreKit2.IAPModule</PackageId>
+    <PackageId>StoreKit2</PackageId>
     <Version>1.0.0</Version>
     <Authors>Yuting Li</Authors>
     <Company>Shanghai Jiuqianji Technology Co., Ltd.</Company>
@@ -20,8 +22,9 @@
     <Description>A .NET MAUI binding library for iOS StoreKit2 In-App Purchase functionality</Description>
     <PackageTags>MAUI;iOS;StoreKit2;IAP;InAppPurchase</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/9khub/MAUI.StoreKit2.IAPModule</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/9khub/MAUI.StoreKit2.IAPModule</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/9khub/MAUI.StoreKit2</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/9khub/MAUI.StoreKit2</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Copyright>Copyright (c) 2025 Shanghai Jiuqianji Technology Co., Ltd.</Copyright>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -42,5 +45,9 @@
       <Frameworks>StoreKit</Frameworks>
       <LinkerFlags></LinkerFlags>
     </NativeReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
