@@ -1,3 +1,5 @@
+![NuGet Version](https://img.shields.io/nuget/v/StoreKit2)
+
 # MAUI StoreKit2 IAP Module
 
 A .NET MAUI binding library that provides seamless integration with iOS StoreKit2 In-App Purchase functionality.
