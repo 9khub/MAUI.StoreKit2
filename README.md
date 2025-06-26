@@ -1,4 +1,4 @@
-![NuGet Version](https://img.shields.io/nuget/v/StoreKit2)
+![NuGet Version](https://img.shields.io/nuget/v/StoreKit2?link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FStoreKit2)
 
 # MAUI StoreKit2 IAP Module
 
