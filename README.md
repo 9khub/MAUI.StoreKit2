@@ -48,7 +48,7 @@ dotnet add package StoreKit2
 Or add to your `.csproj` file:
 
 ```xml
-<PackageReference Include="StoreKit2" Version="1.0.0" />
+<PackageReference Include="StoreKit2" Version="1.0.1" />
 ```
 
 ### Manual Installation
