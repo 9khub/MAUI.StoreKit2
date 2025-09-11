@@ -125,7 +125,7 @@ paymentManager.RequestProductsWithProductIds(productIds, (success, error) =>
 });
 ```
 
-### 4. Make a Purchase
+### 4. Make a Purchase (must Load Products first before Make a Purchase)
 
 ```csharp
 paymentManager.PurchaseProductWithProductId("com.yourapp.product1", null, (success, error) =>
