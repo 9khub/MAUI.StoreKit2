@@ -270,3 +270,7 @@ Shanghai Jiuqianji Technology Co., Ltd.
 
 - Apple's StoreKit2 documentation and samples
 - The .NET MAUI community for guidance and support
+
+## Donation
+
+If you’d like to support this project, you can buy us a coffee at [Buy me a coffee](https://buymeacoffee.com/9khub)
