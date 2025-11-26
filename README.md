@@ -238,12 +238,53 @@ The library provides comprehensive error handling through:
 
 ## Testing
 
-For testing in-app purchases:
+### StoreKit Configuration File Setup
 
+Before you can test in-app purchases during development, you need to set up a StoreKit Configuration file in Xcode. This allows you to test purchases locally without requiring App Store Connect configuration.
+
+#### Creating a StoreKit Configuration File
+
+1. **Open your iOS project in Xcode** (the native iOS project inside your MAUI solution's `Platforms/iOS` folder, or open via the `.xcodeproj`/`.xcworkspace` if building natively)
+
+2. **Create a new StoreKit Configuration file:**
+   - In Xcode, go to **File → New → File...**
+   - Search for "StoreKit" and select **StoreKit Configuration File**
+   - Name it (e.g., `Products.storekit`) and save it
+
+3. **Add your products:**
+   - Click the **+** button in the StoreKit Configuration editor
+   - Choose the product type (Consumable, Non-Consumable, Auto-Renewable Subscription, or Non-Renewing Subscription)
+   - Fill in the product details:
+     - **Reference Name**: A descriptive name for your reference
+     - **Product ID**: Must match the product IDs you use in your code (e.g., `com.yourapp.product1`)
+     - **Price**: Set a test price
+     - **Localization**: Add display name and description
+
+4. **Enable the StoreKit Configuration in your scheme:**
+   - Go to **Product → Scheme → Edit Scheme...**
+   - Select **Run** on the left panel
+   - Go to the **Options** tab
+   - Under **StoreKit Configuration**, select your `.storekit` file
+
+> **Important for MAUI developers:** The `.storekit` configuration file should remain in your Xcode project. It is used by Xcode's testing infrastructure and does not need to be moved to your MAUI project's iOS platform folder.
+
+#### Testing Options
+
+**Local Testing with StoreKit Configuration (Recommended for Development):**
+- Works in the iOS Simulator (iOS 14+)
+- No App Store Connect setup required
+- Instant purchase confirmations
+- Great for rapid development and debugging
+
+**Sandbox Testing (Recommended for Pre-Release):**
 1. Use Apple's sandbox environment
 2. Create test user accounts in App Store Connect
 3. Configure your products in App Store Connect
-4. Test on physical devices (StoreKit2 doesn't work in simulator)
+4. Test on physical devices for most accurate results
+
+> **Note:** While StoreKit2 supports testing in the simulator with a StoreKit Configuration file, testing on physical devices with sandbox accounts is recommended before release to ensure the full purchase flow works correctly.
+
+For detailed instructions, see Apple's official documentation: [Setting up StoreKit Testing in Xcode](https://developer.apple.com/documentation/xcode/setting-up-storekit-testing-in-xcode)
 
 ## License
 
